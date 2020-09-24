@@ -55,8 +55,6 @@ whether or not my soil needs some action, such as irrigation.
 
 * Docker
 
-* Embedded Cache
-
 * MongoDB
 
 * Maven3
@@ -78,11 +76,9 @@ whether or not my soil needs some action, such as irrigation.
 # Building
 
 This project uses Maven for project management tool. Also Docker file is also attached for containerization.  All the commands should be run from the root folder.
-
  
 
 To run the test cases, the following command must be executed:
-
  
 
 ```
@@ -92,7 +88,6 @@ $ mvn test
 ```
 
 The following command will package the project.
-
  
 
 ```
@@ -107,47 +102,14 @@ $ mvn clean package
 
  
 
-The project can be directly run from below command:
-
- 
+The project can be directly run from below command. This will run the complete cycle from testing to deployment on docker.
 
 ```
-
-java -jar target/fieldService-0.0.1-SNAPSHOT.jar
-
-```
-
-or
-
- 
-
-```
-
-mvn spring-boot:run
-
-```
-
- 
-
-or
-
- 
-
-```
-
+docker-compose build
 docker-compose up -d
 
 ```
 
- 
-
-# Note
-
-I am using embedded mongo while running test cases but to deploy fieldservice app on docker application.properties
-
-needs to be modified. change the hostname from localhost to mongo now it will point the mongoDB instance inside docker. 
-
- 
 
 # Testing
 
@@ -156,4 +118,5 @@ needs to be modified. change the hostname from localhost to mongo now it will po
 * Hit the url - `http://localhost:8082
 
 * This will open swagger UI with Api listing.
+
 
